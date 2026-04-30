@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FocusPact stops social media before it opens. Choose why and how long before access begins.">
+  <title>FocusPact</title>
+  <link rel="dns-prefetch" href="https://forms.gle">
+  <link rel="preconnect" href="https://forms.gle" crossorigin>
+  <link rel="prefetch" href="https://forms.gle/X6uBM2MDXnzjWrQ67" as="document">
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --panel: #151515;
+      --text: #f5f5f5;
+      --muted: #a7a7a7;
+      --soft: #747474;
+      --line: #292929;
+      --accent: #f1e7d6;
+      --max: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .page {
+      width: min(100% - 36px, var(--max));
+      margin: 0 auto;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 24px 0;
+    }
+
+    .brand,
+    .footer-brand {
+      font-size: 0.92rem;
+      font-weight: 760;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-left: auto;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      transition: color 160ms ease;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+    }
+
+    .language {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--soft);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+    }
+
+    .language button {
+      border: 0;
+      background: transparent;
+      color: var(--soft);
+      font: inherit;
+      cursor: pointer;
+      padding: 4px 0;
+    }
+
+    .language button.active {
+      color: var(--text);
+    }
+
+    section {
+      padding: clamp(72px, 10vw, 120px) 0;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .hero {
+      padding-top: clamp(76px, 11vw, 132px);
+      border-top: 0;
+    }
+
+    .promise {
+      padding-top: clamp(60px, 8vw, 96px);
+      padding-bottom: clamp(60px, 8vw, 96px);
+    }
+
+    .promise p {
+      max-width: 680px;
+      white-space: pre-line;
+    }
+
+    h1,
+    h2 {
+      max-width: 840px;
+      margin: 0 auto;
+      color: var(--text);
+      letter-spacing: -0.055em;
+      white-space: pre-line;
+    }
+
+    h1 {
+      font-size: clamp(3.4rem, 10vw, 7.5rem);
+      line-height: 0.9;
+      font-weight: 850;
+    }
+
+    h2 {
+      font-size: clamp(2.35rem, 6vw, 4.7rem);
+      line-height: 0.95;
+      font-weight: 820;
+    }
+
+    body.lang-jp h1,
+    body.lang-jp h2 {
+      max-width: 920px;
+      letter-spacing: -0.035em;
+      line-break: strict;
+      word-break: keep-all;
+      overflow-wrap: normal;
+      text-align: center;
+    }
+
+    body.lang-jp h1 {
+      max-width: 720px;
+      font-size: clamp(2.65rem, 6.2vw, 5.15rem);
+      line-height: 1.08;
+    }
+
+    body.lang-jp h2 {
+      font-size: clamp(2.25rem, 5.4vw, 4.25rem);
+      line-height: 1.12;
+    }
+
+    p {
+      max-width: 620px;
+      margin: 24px auto 0;
+      color: var(--muted);
+      font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      margin-top: 34px;
+      padding: 15px 24px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #111;
+      font-size: 0.84rem;
+      font-weight: 780;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .hero-image {
+      max-width: 760px;
+      margin: 58px auto 0;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(241, 231, 214, 0.11), transparent 28rem),
+        var(--panel);
+      box-shadow: 0 34px 110px rgba(0, 0, 0, 0.42);
+    }
+
+    .hero-image img {
+      max-height: 760px;
+      object-fit: cover;
+      border-radius: 26px;
+      filter: brightness(1.08) contrast(1.03) saturate(0.96);
+    }
+
+    .jp-only {
+      display: none;
+    }
+
+    body.lang-jp .jp-only {
+      display: block;
+    }
+
+    .video-section {
+      padding-top: clamp(64px, 8vw, 96px);
+    }
+
+    .video-section p {
+      margin-top: 18px;
+    }
+
+    .video-frame {
+      position: relative;
+      width: min(100%, 560px);
+      max-width: 560px;
+      margin: 38px auto 0;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(241, 231, 214, 0.1), transparent 18rem),
+        var(--panel);
+      box-shadow: 0 36px 120px rgba(0, 0, 0, 0.5);
+      animation: fadeUp 700ms ease both;
+    }
+
+    .video-frame video {
+      display: block;
+      width: 100%;
+      max-height: 820px;
+      border-radius: 22px;
+      background: #050505;
+    }
+
+    .video-caption {
+      margin-top: 14px;
+      color: var(--soft);
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .product-image {
+      max-width: 430px;
+      margin: 46px auto 0;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(241, 231, 214, 0.09), transparent 22rem),
+        var(--panel);
+      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.38);
+    }
+
+    .product-image img {
+      max-height: 680px;
+      object-fit: cover;
+      border-radius: 24px;
+      filter: brightness(1.1) contrast(1.02);
+    }
+
+    .difference p,
+    .final p {
+      white-space: pre-line;
+    }
+
+    .steps {
+      display: grid;
+      gap: 12px;
+      max-width: 720px;
+      margin: 34px auto 0;
+    }
+
+    .steps {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .step {
+      padding: 20px;
+    }
+
+    .step span {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 0.96rem;
+      font-weight: 820;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .step strong {
+      color: var(--text);
+      font-size: 1.08rem;
+      line-height: 1.25;
+    }
+
+    .comparison-table {
+      max-width: 760px;
+      margin: 38px auto 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.025);
+      text-align: left;
+    }
+
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .comparison-row + .comparison-row {
+      border-top: 1px solid var(--line);
+    }
+
+    .comparison-cell {
+      padding: 20px 22px;
+    }
+
+    .comparison-cell + .comparison-cell {
+      border-left: 1px solid var(--line);
+    }
+
+    .comparison-head {
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .comparison-head .comparison-cell {
+      color: var(--text);
+      font-size: 1.05rem;
+      font-weight: 780;
+    }
+
+    .comparison-cell p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+
+    .comparison-cell.focus {
+      background: rgba(241, 231, 214, 0.045);
+    }
+
+    .comparison-cell.focus p {
+      color: var(--text);
+    }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 34px 0 48px;
+      border-top: 1px solid var(--line);
+      color: var(--soft);
+      font-size: 0.84rem;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .header {
+        align-items: flex-start;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero-image {
+        margin-top: 42px;
+      }
+
+      .video-frame {
+        width: min(100%, 430px);
+        max-width: 430px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-table {
+        border-radius: 16px;
+      }
+
+      .comparison-cell {
+        padding: 14px 12px;
+      }
+
+      .comparison-head .comparison-cell {
+        font-size: 0.92rem;
+      }
+
+      .comparison-cell p {
+        font-size: 0.86rem;
+        line-height: 1.45;
+      }
+
+      .footer {
+        gap: 12px;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <a class="brand" href="#">FocusPact</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#system" data-i18n="navSystem">The System</a>
+        <a href="#early-access" data-i18n="navEarly">Early Access</a>
+      </nav>
+      <div class="language" aria-label="Language selector">
+        <button id="lang-en" type="button" class="active">EN</button>
+        <span>|</span>
+        <button id="lang-jp" type="button">JP</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title" data-i18n="heroHeadline">Unconscious scrolling,
+strictly limited.</h1>
+        <p data-i18n="heroSub">You open it before you even mean to. It’s okay. FocusPact is there.</p>
+        <a class="button" href="https://forms.gle/X6uBM2MDXnzjWrQ67" target="_blank" rel="noopener noreferrer" data-i18n="cta">Apply for early access</a>
+        <div class="hero-image">
+          <img src="IMG_6113.HEIC" alt="FocusPact block screen on an iPhone">
+        </div>
+      </section>
+
+      <section class="promise" aria-labelledby="promise-title">
+        <h2 id="promise-title" data-i18n="promiseHeadline">The moment you open social media.
+But you had things to do.</h2>
+        <p data-i18n="promiseBody">When you open social media, your Todo list appears. That solves the problem.
+You face what you actually need to do.</p>
+      </section>
+
+      <section class="video-section jp-only" aria-labelledby="video-title">
+        <h2 id="video-title">30秒でわかる使い方</h2>
+        <p>開く前に止める。その流れを見てください。</p>
+        <div class="video-frame">
+          <video src="FocusPact.mov" autoplay muted loop controls playsinline preload="metadata"></video>
+        </div>
+        <div class="video-caption">実際の操作画面</div>
+      </section>
+
+      <section id="system" aria-labelledby="system-title">
+        <h2 id="system-title" data-i18n="systemHeadline">Use it consciously,
+not unconsciously.</h2>
+        <p data-i18n="systemBody">Don’t let social media use you. Think before you use it. FocusPact fully supports that.</p>
+        <div class="steps" aria-label="How FocusPact works">
+          <div class="step">
+            <span data-i18n="stepOneLabel">01</span>
+            <strong data-i18n="stepOne">Say why you’re opening.</strong>
+          </div>
+          <div class="step">
+            <span data-i18n="stepTwoLabel">02</span>
+            <strong data-i18n="stepTwo">Choose how long you stay.</strong>
+          </div>
+          <div class="step">
+            <span data-i18n="stepThreeLabel">03</span>
+            <strong data-i18n="stepThree">Then access begins.</strong>
+          </div>
+        </div>
+        <div class="product-image">
+          <img src="IMG_2774.PNG" alt="FocusPact intention and time selection screen">
+        </div>
+      </section>
+
+      <section class="difference" aria-labelledby="difference-title">
+        <h2 id="difference-title" data-i18n="differenceHeadline">Time limits are not enough.</h2>
+        <div class="comparison-table" aria-label="Difference between other apps and FocusPact">
+          <div class="comparison-row comparison-head">
+            <div class="comparison-cell" data-i18n="otherAppsTitle">Other apps</div>
+            <div class="comparison-cell focus" data-i18n="focusPactTitle">FocusPact</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-cell">
+              <p data-i18n="otherAppsBody">Only limit your time.</p>
+            </div>
+            <div class="comparison-cell focus">
+              <p data-i18n="focusPactPointOne">Limits how many times you can open it per day.</p>
+            </div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-cell">
+              <p data-i18n="otherAppsPointTwo">Doesn’t ask why you opened it.</p>
+            </div>
+            <div class="comparison-cell focus">
+              <p data-i18n="focusPactPointTwo">Makes you choose why you’re opening.</p>
+            </div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-cell">
+              <p data-i18n="otherAppsPointThree">Lets the impulse happen first.</p>
+            </div>
+            <div class="comparison-cell focus">
+              <p data-i18n="focusPactPointThree">Makes you choose how long you’ll stay.</p>
+            </div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-cell">
+              <p data-i18n="otherAppsPointFour">Too many features.</p>
+            </div>
+            <div class="comparison-cell focus">
+              <p data-i18n="focusPactPointFour">Todo × limits. Intentionally simple.</p>
+            </div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-cell">
+              <p data-i18n="otherAppsPointFive">No next action after SNS is restricted.</p>
+            </div>
+            <div class="comparison-cell focus">
+              <p data-i18n="focusPactPointFive">The Todo list brings you back to what matters.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="early-access" class="final" aria-labelledby="final-title">
+        <h2 id="final-title" data-i18n="finalHeadline">Built only for people
+who want to change.</h2>
+        <p data-i18n="finalBody">For people who want to stop wasting time.
+For people who want restriction before regret.
+For people who are serious about changing.
+For people who want to escape the version of themselves that drifts.
+For people who want to build consistency.
+For people who want to start a business.</p>
+        <a class="button" href="https://forms.gle/X6uBM2MDXnzjWrQ67" target="_blank" rel="noopener noreferrer" data-i18n="cta">Apply for early access</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span class="footer-brand">FocusPact</span>
+      <span data-i18n="footerEarly">Early Access</span>
+    </footer>
+  </div>
+
+  <script>
+    (() => {
+      const copy = {
+        en: {
+          navSystem: "The System",
+          navEarly: "Early Access",
+          heroHeadline: "Unconscious scrolling,\nstrictly limited.",
+          heroSub: "You open it before you even mean to. It’s okay. FocusPact is there.",
+          cta: "Apply for early access",
+          promiseHeadline: "The moment you open social media.\nBut you had things to do.",
+          promiseBody: "When you open social media, your Todo list appears. That solves the problem.\nYou face what you actually need to do.",
+          systemHeadline: "Use it consciously,\nnot unconsciously.",
+          systemBody: "Don’t let social media use you. Think before you use it. FocusPact fully supports that.",
+          stepOneLabel: "01",
+          stepOne: "Say why you’re opening.",
+          stepTwoLabel: "02",
+          stepTwo: "Choose how long you stay.",
+          stepThreeLabel: "03",
+          stepThree: "Then access begins.",
+          differenceHeadline: "Time limits are not enough.",
+          otherAppsTitle: "Other apps",
+          otherAppsBody: "Only limit your time.",
+          otherAppsPointTwo: "Doesn’t ask why you opened it.",
+          otherAppsPointThree: "Lets the impulse happen first.",
+          otherAppsPointFour: "Too many features.",
+          otherAppsPointFive: "No next action after SNS is restricted.",
+          focusPactTitle: "FocusPact",
+          focusPactPointOne: "Limits how many times you can open it per day.",
+          focusPactPointTwo: "Makes you choose why you’re opening.",
+          focusPactPointThree: "Makes you choose how long you’ll stay.",
+          focusPactPointFour: "Todo × limits. Intentionally simple.",
+          focusPactPointFive: "The Todo list brings you back to what matters.",
+          finalHeadline: "Built only for people\nwho want to change.",
+          finalBody: "For people who want to stop wasting time.\nFor people who want restriction before regret.\nFor people who are serious about changing.\nFor people who want to escape the version of themselves that drifts.\nFor people who want to build consistency.\nFor people who want to start a business.",
+          footerEarly: "Early Access"
+        },
+        jp: {
+          navSystem: "仕組み",
+          navEarly: "先行アクセス",
+          heroHeadline: "無意識な\nスクロールを\n厳しく制限する",
+          heroSub: "開きたくないのに気づいたら開いている。\n大丈夫、FocusPactがいる。",
+          cta: "先行アクセスに申し込む",
+          promiseHeadline: "SNSを開く瞬間。\nでもやることはあったはず。",
+          promiseBody: "SNSを開いた時にToDoリストが見えることでその問題を解決。\nあなたは自分のやるべきことに向き合うことができます。",
+          systemHeadline: "無意識ではなく\n意識的に使う。",
+          systemBody: "SNSに使われるな。考えて使え。\nそのサポートをFocusPactが全力でする。",
+          stepOneLabel: "01",
+          stepOne: "なぜ使うのかを決める。",
+          stepTwoLabel: "02",
+          stepTwo: "何分使うのかを決める。",
+          stepThreeLabel: "03",
+          stepThree: "決めてから、開く。",
+          differenceHeadline: "時間制限だけでは\n足りない。",
+          otherAppsTitle: "他のアプリ",
+          otherAppsBody: "時間だけ制限する。",
+          otherAppsPointTwo: "なぜ開いたのかは聞かない。",
+          otherAppsPointThree: "衝動で開いた後に止める。",
+          otherAppsPointFour: "機能が多すぎる。",
+          otherAppsPointFive: "SNS制限後の代替行動がない。",
+          focusPactTitle: "FocusPact",
+          focusPactPointOne: "1日に使える回数が決まっている。",
+          focusPactPointTwo: "開くたびに理由を決める。",
+          focusPactPointThree: "使う時間を決める。",
+          focusPactPointFour: "Todo×制限で至ってシンプル。",
+          focusPactPointFive: "Todoリストにて気づきを与える。",
+          finalHeadline: "変わりたい人だけを\nサポートするアプリです。",
+          finalBody: "時間を無駄にするのをやめたい人へ。\n後悔する前に、制限が欲しい人へ。\n本気で変わりたい人。\nダラダラしている自分から抜け出したい人。\n継続力をつけたい人。\n起業したい人。",
+          footerEarly: "先行アクセス"
+        }
+      };
+
+      const enButton = document.getElementById("lang-en");
+      const jpButton = document.getElementById("lang-jp");
+      const nodes = document.querySelectorAll("[data-i18n]");
+      const storageKey = "focuspact_language";
+
+      function setLanguage(lang) {
+        const selected = copy[lang] ? lang : "en";
+
+        nodes.forEach((node) => {
+          const key = node.getAttribute("data-i18n");
+          node.textContent = copy[selected][key];
+        });
+
+        document.documentElement.lang = selected === "jp" ? "ja" : "en";
+        document.body.classList.toggle("lang-jp", selected === "jp");
+        enButton.classList.toggle("active", selected === "en");
+        jpButton.classList.toggle("active", selected === "jp");
+        localStorage.setItem(storageKey, selected);
+      }
+
+      enButton.addEventListener("click", () => setLanguage("en"));
+      jpButton.addEventListener("click", () => setLanguage("jp"));
+
+      setLanguage(localStorage.getItem(storageKey) || "en");
+    })();
+  </script>
+</body>
+</html>
