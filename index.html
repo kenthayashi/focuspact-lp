@@ -224,14 +224,6 @@
       filter: brightness(1.08) contrast(1.03) saturate(0.96);
     }
 
-    .jp-only {
-      display: none;
-    }
-
-    body.lang-jp .jp-only {
-      display: block;
-    }
-
     .video-section {
       padding-top: clamp(64px, 8vw, 96px);
     }
@@ -282,7 +274,7 @@
     }
 
     .product-image {
-      max-width: 430px;
+      max-width: 680px;
       margin: 46px auto 0;
       padding: 10px;
       border: 1px solid var(--line);
@@ -294,7 +286,7 @@
     }
 
     .product-image img {
-      max-height: 680px;
+      max-height: 860px;
       object-fit: cover;
       border-radius: 24px;
       filter: brightness(1.1) contrast(1.02);
@@ -476,7 +468,7 @@ strictly limited.</h1>
         <p data-i18n="heroSub">You open it before you even mean to. It’s okay. FocusPact is there.</p>
         <a class="button" href="https://forms.gle/X6uBM2MDXnzjWrQ67" target="_blank" rel="noopener noreferrer" data-i18n="cta">Apply for early access</a>
         <div class="hero-image">
-          <img src="IMG_6113.HEIC" alt="FocusPact block screen on an iPhone">
+          <img src="LPiphone2.png" alt="FocusPact block screen on an iPhone">
         </div>
       </section>
 
@@ -487,13 +479,13 @@ But you had things to do.</h2>
 You face what you actually need to do.</p>
       </section>
 
-      <section class="video-section jp-only" aria-labelledby="video-title">
-        <h2 id="video-title">30秒でわかる使い方</h2>
-        <p>開く前に止める。その流れを見てください。</p>
+      <section class="video-section" aria-labelledby="video-title">
+        <h2 id="video-title" data-i18n="videoHeadline">How it works in 30 seconds</h2>
+        <p data-i18n="videoSub">See how FocusPact stops you before you open.</p>
         <div class="video-frame">
-          <video src="FocusPact.mov" autoplay muted loop controls playsinline preload="metadata"></video>
+          <video id="walkthrough-video" src="FocusPactEN.MOV" autoplay muted loop controls playsinline preload="metadata"></video>
         </div>
-        <div class="video-caption">実際の操作画面</div>
+        <div class="video-caption" data-i18n="videoCaption">Actual product flow</div>
       </section>
 
       <section id="system" aria-labelledby="system-title">
@@ -515,7 +507,7 @@ not unconsciously.</h2>
           </div>
         </div>
         <div class="product-image">
-          <img src="IMG_2774.PNG" alt="FocusPact intention and time selection screen">
+          <img src="image1.jpeg" alt="FocusPact intention and time selection screen">
         </div>
       </section>
 
@@ -597,6 +589,9 @@ For people who want to start a business.</p>
           heroHeadline: "Unconscious scrolling,\nstrictly limited.",
           heroSub: "You open it before you even mean to. It’s okay. FocusPact is there.",
           cta: "Apply for early access",
+          videoHeadline: "How it works in 30 seconds",
+          videoSub: "See how FocusPact stops you before you open.",
+          videoCaption: "Actual product flow",
           promiseHeadline: "The moment you open social media.\nBut you had things to do.",
           promiseBody: "When you open social media, your Todo list appears. That solves the problem.\nYou face what you actually need to do.",
           systemHeadline: "Use it consciously,\nnot unconsciously.",
@@ -630,6 +625,9 @@ For people who want to start a business.</p>
           heroHeadline: "無意識な\nスクロールを\n厳しく制限する",
           heroSub: "開きたくないのに気づいたら開いている。\n大丈夫、FocusPactがいる。",
           cta: "先行アクセスに申し込む",
+          videoHeadline: "30秒でわかる使い方",
+          videoSub: "開く前に止める。その流れを見てください。",
+          videoCaption: "実際の操作画面",
           promiseHeadline: "SNSを開く瞬間。\nでもやることはあったはず。",
           promiseBody: "SNSを開いた時にToDoリストが見えることでその問題を解決。\nあなたは自分のやるべきことに向き合うことができます。",
           systemHeadline: "無意識ではなく\n意識的に使う。",
@@ -662,6 +660,7 @@ For people who want to start a business.</p>
       const enButton = document.getElementById("lang-en");
       const jpButton = document.getElementById("lang-jp");
       const nodes = document.querySelectorAll("[data-i18n]");
+      const walkthroughVideo = document.getElementById("walkthrough-video");
       const storageKey = "focuspact_language";
 
       function setLanguage(lang) {
@@ -674,6 +673,13 @@ For people who want to start a business.</p>
 
         document.documentElement.lang = selected === "jp" ? "ja" : "en";
         document.body.classList.toggle("lang-jp", selected === "jp");
+        if (walkthroughVideo) {
+          const nextVideo = selected === "jp" ? "FocusPact.mov" : "FocusPactEN.MOV";
+          if (!walkthroughVideo.src.endsWith(nextVideo)) {
+            walkthroughVideo.src = nextVideo;
+            walkthroughVideo.load();
+          }
+        }
         enButton.classList.toggle("active", selected === "en");
         jpButton.classList.toggle("active", selected === "jp");
         localStorage.setItem(storageKey, selected);
