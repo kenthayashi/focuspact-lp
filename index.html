@@ -7,7 +7,10 @@
   <title>FocusPact</title>
   <link rel="dns-prefetch" href="https://forms.gle">
   <link rel="preconnect" href="https://forms.gle" crossorigin>
+  <link rel="dns-prefetch" href="https://docs.google.com">
+  <link rel="preconnect" href="https://docs.google.com" crossorigin>
   <link rel="prefetch" href="https://forms.gle/X6uBM2MDXnzjWrQ67" as="document">
+  <link rel="prefetch" href="https://docs.google.com/forms/d/e/1FAIpQLSeOdVjIkM5Hm8zQ1KEEzjwLQLOUhqLaS3vow2YhOW7tIubsWQ/viewform?usp=publish-editor" as="document">
   <style>
     :root {
       --bg: #0f0f0f;
@@ -466,7 +469,7 @@
         <h1 id="hero-title" data-i18n="heroHeadline">You don’t mean to open it.
 But you do.</h1>
         <p data-i18n="heroSub">You’re not alone. FocusPact stops you before you drift.</p>
-        <a class="button" href="https://forms.gle/X6uBM2MDXnzjWrQ67" target="_blank" rel="noopener noreferrer" data-i18n="cta">Apply for early access</a>
+        <a class="button cta-link" href="https://forms.gle/X6uBM2MDXnzjWrQ67" target="_blank" rel="noopener noreferrer" data-i18n="cta">Apply for early access</a>
         <div class="hero-image">
           <img src="LPiphone2.png" alt="FocusPact block screen on an iPhone">
         </div>
@@ -574,7 +577,7 @@ Choose control before regret.
 Get out of autopilot.
 Build real consistency.
 Do what actually matters.</p>
-        <a class="button" href="https://forms.gle/X6uBM2MDXnzjWrQ67" target="_blank" rel="noopener noreferrer" data-i18n="cta">Apply for early access</a>
+        <a class="button cta-link" href="https://forms.gle/X6uBM2MDXnzjWrQ67" target="_blank" rel="noopener noreferrer" data-i18n="cta">Apply for early access</a>
       </section>
     </main>
 
@@ -665,7 +668,11 @@ Do what actually matters.</p>
       const jpButton = document.getElementById("lang-jp");
       const nodes = document.querySelectorAll("[data-i18n]");
       const walkthroughVideo = document.getElementById("walkthrough-video");
+      const ctaLinks = document.querySelectorAll(".cta-link");
       const storageKey = "focuspact_language";
+      const ctaUrlEn = "https://forms.gle/X6uBM2MDXnzjWrQ67";
+      const ctaUrlJp =
+        "https://docs.google.com/forms/d/e/1FAIpQLSeOdVjIkM5Hm8zQ1KEEzjwLQLOUhqLaS3vow2YhOW7tIubsWQ/viewform?usp=publish-editor";
 
       function setLanguage(lang) {
         const selected = copy[lang] ? lang : "en";
@@ -677,6 +684,10 @@ Do what actually matters.</p>
 
         document.documentElement.lang = selected === "jp" ? "ja" : "en";
         document.body.classList.toggle("lang-jp", selected === "jp");
+        const nextCta = selected === "jp" ? ctaUrlJp : ctaUrlEn;
+        ctaLinks.forEach((link) => {
+          link.setAttribute("href", nextCta);
+        });
         if (walkthroughVideo) {
           const nextVideo = selected === "jp" ? "FocusPact.mov" : "FocusPactEN.MOV";
           if (!walkthroughVideo.src.endsWith(nextVideo)) {
